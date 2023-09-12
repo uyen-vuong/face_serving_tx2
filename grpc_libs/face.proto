@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Request{
+    bytes images = 1;
+}
+
+message Response{
+    bytes results = 1;
+}
+
+service AIService{
+    rpc check_emotion(Request) returns (Response) {} 
+    rpc detection_face(Request) returns (Response) {}
+}
